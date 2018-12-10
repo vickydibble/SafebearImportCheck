@@ -15,8 +15,8 @@ Feature: Login
   @HighImpact
   Scenario Outline: Navigate and login to the application
     Given I navigate to the login page
-    When I enter the login details for '<userType>'
-    Then I can see the following message: '<validationMessage>'
+    When  I enter the login details for: '<userType>'
+    Then  I can see the following message: '<validationMessage>'
 
     Examples:
       | userType    | validationMessage                 |
