@@ -6,7 +6,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions
         (
                 plugin = {"pretty", "html:target/cucumber"},
-                tags = "~to-do",
+                tags = "~@to-do",
                 glue = "com.safebear.auto.tests",
                 features = "classpath:toolslist.features/login.feature"
         )
