@@ -19,7 +19,7 @@ public class ExampleClass {
         Assertions.assertThat(exampleVariable).isEqualTo(5);
 
         // We can print something to screen
-        System.out.println("First commit");
+        System.out.println("creating a new branch");
 
     }
 
