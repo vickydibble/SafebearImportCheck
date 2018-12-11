@@ -1,16 +1,45 @@
 package com.safebear.auto.tests;
 
+import com.safebear.auto.utils.Util;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.WebDriver;
 
 public class StepDefs {
 
+    WebDriver driver;
+
+    @Before
+    public void setUp(){
+        driver = Util.getDriver();
+    }
+
+    @After
+    public void tearDown(){
+        try
+        {
+                //Thread.sleep(2000);
+                Thread.sleep(Integer.parseInt(System.getProperty("sleep", "2000")));
+        }
+        catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        //driver.close();
+        driver.quit();
+    }
+
+
     @Given("^I navigate to the login page$")
     public void i_navigate_to_the_login_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+
+        driver.get(Util.getUrl());
+
+
+
     }
 
     @When("^I enter the login details for a '(.+)'$")

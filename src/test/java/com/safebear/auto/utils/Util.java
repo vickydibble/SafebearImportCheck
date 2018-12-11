@@ -11,8 +11,8 @@ public class Util {
 
 
 
-    private static final String URL = System.getProperty("url","http://toolslist.safebear.co.uk/8080");
-    private static final String BROWSER = System.getProperty("browser", "chrome");
+    private static final String URL = System.getProperty("url","http://toolslist.safebear.co.uk:8080");
+    private static final String BROWSER = System.getProperty("browser", "firefox");
 
 //    private ChromeOptions chromeOptions = new ChromeOptions();
 //    private FirefoxOptions ffOptions = new FirefoxOptions();
