@@ -1,5 +1,7 @@
 package com.safebear.auto.tests;
 
+import com.safebear.auto.Pages.LoginPage;
+import com.safebear.auto.Pages.ToolsPage;
 import com.safebear.auto.utils.Util;
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
@@ -8,14 +10,21 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import static org.testng.AssertJUnit.assertEquals;
 
 public class StepDefs {
 
     WebDriver driver;
+LoginPage loginPage;
+ToolsPage toolsPage;
 
     @Before
     public void setUp(){
         driver = Util.getDriver();
+        loginPage = new LoginPage(driver);
+        toolsPage = new ToolsPage(driver);
     }
 
     @After
@@ -37,6 +46,9 @@ public class StepDefs {
     public void i_navigate_to_the_login_page() throws Throwable {
 
         driver.get(Util.getUrl());
+        assertEquals(loginPage.checkTitle(),"LoginPage","Login page not loaded sucessfully");
+
+
 
 
 

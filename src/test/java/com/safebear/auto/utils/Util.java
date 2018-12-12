@@ -12,7 +12,7 @@ public class Util {
 
 
     private static final String URL = System.getProperty("url","http://toolslist.safebear.co.uk:8080");
-    private static final String BROWSER = System.getProperty("browser", "firefox");
+    private static final String BROWSER = System.getProperty("browser", "chrome");
 
 //    private ChromeOptions chromeOptions = new ChromeOptions();
 //    private FirefoxOptions ffOptions = new FirefoxOptions();
@@ -33,6 +33,9 @@ public class Util {
         FirefoxOptions ffoptions = new FirefoxOptions();
         ffoptions.addArguments("window-size = 1366,768");
 
+        ChromeOptions headlessChrome = new ChromeOptions();
+        headlessChrome.addArguments("headless", "disable-gpu");
+
 
 
         switch (BROWSER) {
@@ -44,6 +47,10 @@ public class Util {
 
             case "firefox":
                 return new FirefoxDriver(ffoptions);
+
+
+            case "chromeheadless":
+                return new ChromeDriver(headlessChrome);
 
                 default:
 
